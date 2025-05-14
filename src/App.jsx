@@ -1,7 +1,7 @@
 import './App.css'
 import Home from './pages/Home'
 import Anime from './pages/Anime'
-import { BrowserRouter,Route,Routes } from 'react-router'
+import { HashRouter as Router,Route,Routes } from 'react-router'
 import NavigationBar from './components/NavigationBar'
 import NotFound from './pages/NotFound'
 import Fav from './components/Fav'
@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
     <NavigationBar/>
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
+        {/* <Route path="/" element={<Home/>}></Route> */}
         <Route path="home" element={<Home/>}></Route>
         <Route path="anime" element={<Anime/>}></Route>
         <Route path="fav" element={<Fav/>}></Route>
