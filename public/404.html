@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+      // Redirect to index.html for any route that doesn't exist
+      const redirect = sessionStorage.redirect;
+      if (redirect) {
+        sessionStorage.removeItem("redirect");
+        window.location.href = redirect;
+      } else {
+        sessionStorage.redirect = window.location.href;
+        window.location.replace("/Anime-hub/");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

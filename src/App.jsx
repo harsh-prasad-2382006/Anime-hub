@@ -1,29 +1,26 @@
 import './App.css'
 import Home from './pages/Home'
 import Anime from './pages/Anime'
-import { HashRouter as Router,Route,Routes } from 'react-router'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'  // Using BrowserRouter
 import NavigationBar from './components/NavigationBar'
 import NotFound from './pages/NotFound'
 import Fav from './components/Fav'
-import {AnimeProvider} from './context/AnimeContext'
+import { AnimeProvider } from './context/AnimeContext'
 
 function App() {
-  return(
-    <>
+  return (
     <AnimeProvider>
-    <BrowserRouter>
-    <NavigationBar/>
-      <Routes>
-        {/* <Route path="/" element={<Home/>}></Route> */}
-        <Route path="home" element={<Home/>}></Route>
-        <Route path="anime" element={<Anime/>}></Route>
-        <Route path="fav" element={<Fav/>}></Route>
-        <Route path="*" element={<NotFound/>}></Route>
-      </Routes>
-    </BrowserRouter> 
-    </AnimeProvider>   
-    </>
+      <Router>
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/anime" element={<Anime />} />
+          <Route path="/fav" element={<Fav />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
+    </AnimeProvider>
   )
 }
 
-export default App
+export default App;
